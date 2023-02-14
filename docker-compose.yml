@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    platform: linux/x86_64
+    ports:
+      - 6968:5432
+    volumes:
+      - golang-db-store:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: passw0rd
+      POSTGRES_DB: golang_api
+      POSTGRES_USER: root
+      TZ: "Asia/Tokyo"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6969:6969"
+    volumes:
+      - .:/go/
+    tty: true
+volumes:
+  golang-db-store:
+    driver: local
