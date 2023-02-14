@@ -11,7 +11,7 @@ $ docker-compose exec app sh
 
 # execute starting command
 $ cd /go/src 
-$ go run main.go
+$ gin -i --all run main.go
 ```
 
 ## What I want to do

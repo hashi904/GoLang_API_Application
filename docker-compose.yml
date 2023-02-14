@@ -22,6 +22,7 @@ services:
     volumes:
       - .:/go/
     tty: true
+    command: "gin -i --all run main.go"
 volumes:
   golang-db-store:
     driver: local
