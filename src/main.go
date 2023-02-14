@@ -60,7 +60,7 @@ func getTodoById(id string) (*todo, error) {
 func main() {
 	router := gin.Default()
 	router.GET("/todo", getTodos)
-	router.GET("/todo/:id", getTodo)
+	router.GET("/todo/:id", getTodos)
 	router.POST("/todo", addTodo)
 	router.Run(":6969")
 }
